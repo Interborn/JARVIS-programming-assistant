@@ -4,6 +4,9 @@ import user from './assets/user.svg'
 const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat-container')
 
+// Disable right-click for copying content
+document.addEventListener('contextmenu', event => event.preventDefault());
+
 let loadInterval; 
 
 function loader(element) {
@@ -20,7 +23,7 @@ function loader(element) {
     }, 300);
 }
 
-function typeOutText(element, text) {
+function typeText(element, text) {
     let index = 0
 
     let interval = setInterval(() => {
@@ -34,8 +37,6 @@ function typeOutText(element, text) {
 }
 
 // generate unique ID for each message div of bot
-// necessary for typing text effect for that specific reply
-// without unique ID, typing text will work on every element
 function generateUniqueId() {
     const timestamp = Date.now();
     const randomNumber = Math.random();
@@ -86,7 +87,8 @@ const handleSubmit = async (e) => {
     // messageDiv.innerHTML = "..."
     loader(messageDiv)
 
-    const response = await fetch('https://jarvis-programming-assistant.onrender.com', {
+    // === CHANGE THIS TO YOUR OWN SERVER TO HANDLE THE REQUESTS === //
+    const response = await fetch('https://codr.onrender.com', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -103,7 +105,7 @@ const handleSubmit = async (e) => {
         const data = await response.json();
         const parsedData = data.bot.trim() // trims any trailing spaces/'\n' 
 
-        typeOutText(messageDiv, parsedData)
+        typeText(messageDiv, parsedData)
     } else {
         const err = await response.text()
 
@@ -114,7 +116,7 @@ const handleSubmit = async (e) => {
 
 form.addEventListener('submit', handleSubmit)
 form.addEventListener('keyup', (e) => {
-    if (e.keyCode === 13) {
+    if (e.keyCode == 13 && !e.shiftKey) {
         handleSubmit(e)
     }
 })
