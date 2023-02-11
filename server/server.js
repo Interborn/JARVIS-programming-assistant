@@ -1,10 +1,10 @@
-import express from "express";
-import * as dotenv from "dotenv";
-import cors from "cors";
-import { Configuration, OpenAIApi } from "openai";
+import express from 'express';
+import * as dotenv from 'dotenv';
+import cors from 'cors';
+import { Configuration, OpenAIApi } from 'openai';
 
 dotenv.config();
-console.log(`OpenAI Key: ${process.env.OPENAI-KEY}`)
+// console.log(`OpenAI Key: ${process.env.OPENAI-KEY}`)
 
 const configuration = new Configuration({
     apiKey: process.env.OPENAI-KEY,
