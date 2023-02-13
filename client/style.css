@@ -9,7 +9,7 @@
 }
 
 body {
-  background: #343541;
+  background: #E4D8B4;
 }
 
 nav {
@@ -91,7 +91,7 @@ nav {
 }
 
 .btn-primary:hover, .btn-secondary:hover{
-  background-color: #404040;
+  background-color: #7D7259;
   color: orange;
   transition:all 0.5s ease;
 }
@@ -99,7 +99,7 @@ nav {
 #app {
   width: 100vw;
   height: 100vh;
-  background: #343541;
+  background: #E4D8B4;
 
   display: flex;
   flex-direction: column;
@@ -125,7 +125,7 @@ nav {
 }
 
 .helper_textContainer {
-  color: #686974;
+  color: #000;
   font-weight: 500;
   display: flex;
   max-width: 100%;
@@ -148,7 +148,7 @@ span#keyCommandText {
 }
 
 .ai {
-  background: #40414F;
+  background: #d2c59d;
   border-radius: 6px;
 }
 
@@ -168,7 +168,7 @@ span#keyCommandText {
   height: 36px;
   border-radius: 5px;
 
-  background: #5436DA;
+  background: #a4cbb4;
 
   display: flex;
   justify-content: center;
@@ -176,7 +176,7 @@ span#keyCommandText {
 }
 
 .ai .profile {
-  background: #10a37f;
+  background: #EF9995;
 }
 
 .profile img {
@@ -188,7 +188,7 @@ span#keyCommandText {
 .message {
   flex: 1;
 
-  color: #dcdcdc;
+  color: #000;
   font-size: 20px;
 
   max-width: 100%;
@@ -216,7 +216,7 @@ form {
   max-width: 1280px;
   margin: 0 auto;
   padding: 8px;
-  background: #40414F;
+  background: transparent;
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -228,7 +228,7 @@ form {
 textarea {
   width: 100%;
 
-  color: #fff;
+  color: #000;
   font-size: 18px;
 
   padding: 10px;
