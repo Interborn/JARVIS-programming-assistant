@@ -1,11 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap");
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Alegreya Sans", sans-serif;
-  max-height: 85vh;
+  max-height: 100vh;
 }
 
 body {
@@ -122,6 +128,7 @@ nav {
 
   padding-bottom: 20px;
   scroll-behavior: smooth;
+  padding-top: 5vh;
 }
 
 .helper_textContainer {
@@ -206,6 +213,63 @@ span#keyCommandText {
   scrollbar-width: none;
 }
 
+.nav {
+  display: flex;
+  padding: 30px 10px;
+  width: 100%;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+}
+
+.nav img {
+  width: 70px;
+  height: 60px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.fade-container {
+  position: fixed;
+  top: 10vh;
+  height: 10vh;
+  width: 100vw;
+  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(228,216,180,1) 80%, rgba(228,216,180,1) 100%);
+}
+
+#jarvis {
+  text-decoration: underline;
+  margin-right: 4px;
+}
+
+#jarvis a {
+  color: #000;
+}
+
+.footer {
+  width: 100vw;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer img {
+  max-height: 40px;
+  max-width: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.favorite-icon {
+  max-width: 40px;
+  max-height: 40px;
+  cursor: pointer;
+}
+
 /* hides scrollbar */
 .message::-webkit-scrollbar {
   display: none;
@@ -258,7 +322,7 @@ form img {
     max-width: 96%;
   }
   * {
-    max-height: 82vh;
+    max-height: 90vh;
   }
   .nav, .wrapper {
     max-width: 96%;
@@ -275,7 +339,7 @@ form img {
 /** TABLET / DESKTOP RESPONSIVE **/
 @media only screen and (min-width: 968px) {
   * {
-    max-height: 92vh;
+    max-height: 100vh;
     max-width: 100%;
   }
   .wrapper {

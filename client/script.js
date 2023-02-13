@@ -1,5 +1,8 @@
 import bot from './assets/bot.svg'
 import user from './assets/user.svg'
+import starAnim from './assets/star-anim.gif'
+import starBlank from './assets/star-blank.gif'
+import star from './assets/star.png'
 
 const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat-container')
@@ -8,6 +11,21 @@ const chatContainer = document.querySelector('#chat-container')
 document.addEventListener('contextmenu', event => event.preventDefault());
 
 let loadInterval; 
+
+function handleClick() {
+    // if (document.querySelector('#favorite-icon').src == './assets/star-blank.png') {
+    //     setTimeout(function(){
+    //         document.querySelector('#favorite-icon').src = './assets/star.png';
+    //     }, 1000);
+    //     document.querySelector('#favorite-icon').src = './assets/star-anim.gif'
+    // } else {
+    //     setTimeout(function(){
+    //         document.querySelector('#favorite-icon').src = './assets/star-blank.gif';
+    //     }, 1000);
+    //     document.querySelector('#favorite-icon').src = './assets/star-reverse.gif'
+    // }
+    document.querySelector('#favorite-icon').src == './assets/star.png'
+}
 
 function loader(element) {
     element.textContent = ''
@@ -53,10 +71,18 @@ function chatStripe(isAi, value, uniqueId) {
                 <div class="profile">
                     <img 
                       src=${isAi ? bot : user} 
-                      alt="${isAi ? 'bot' : 'user'}" 
+                      alt="${isAi ? 'bot' : 'user'}"
                     />
                 </div>
                 <div class="message" id=${uniqueId}>${value}</div>
+                <div>
+                    <img 
+                        src=${starBlank}
+                        alt="favorite this message"
+                        class="favorite-icon"
+                        onclick="handleClick()"
+                    />
+                </div>
             </div>
         </div>
     `
